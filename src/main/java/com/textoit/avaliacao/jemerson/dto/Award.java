@@ -1,5 +1,7 @@
 package com.textoit.avaliacao.jemerson.dto;
 
+import java.util.Arrays;
+
 public class Award {
 
 	private Winner[] min;
@@ -26,4 +28,10 @@ public class Award {
 		this.max = max;
 	}
 
+	@Override
+	public String toString() {
+		return "Award [min=" + Arrays.toString(min) + ", max=" + Arrays.toString(max) + "]";
+	}
+
+	
 }

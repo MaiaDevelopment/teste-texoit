@@ -44,7 +44,7 @@ public class CSVImporter {
 	@Autowired
     public DataSource dataSource;
 
-	@Value("classPath:/input/movielist.csv")
+	@Value("classpath:/input/movielist.csv")
 	private Resource inputResource;
 	
 	private final String[] fieldNames = { "year", "title", "studios", "producers", "winner" };
@@ -129,7 +129,7 @@ public class CSVImporter {
 		return stepBuilderFactory.get("step1").
 				<Movie, Movie>chunk(10)
 				.reader(reader())
-				.processor(processor())
+				//.processor(processor())
 				.writer(writer()).build();
 	}
 

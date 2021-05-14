@@ -30,11 +30,11 @@ Atenção: O arquivo csv que é importado está na pasta `src/main/resources/inp
 
 ### Application API
 
-Acessar http://localhost:8080/api/movies/awards
+Acessar[http://localhost:8080/api/movies/awards](http://localhost:8080/api/movies/awards)
 
 ### Database access
 
-http://localhost:8080/h2-console
+[http://localhost:8080/h2-console](http://localhost:8080/h2-console)
 
 `JDBC URL`: jdbc:h2:mem:texoit
 

@@ -1,5 +1,8 @@
 package com.textoit.avaliacao.jemerson.service;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.stream.Stream;
 
@@ -20,14 +23,30 @@ public class AwardService {
 	
 	public Award getAwardWinners() {
 		
-		Iterable<Movie> movies = movieRepostory.findAllByWinner(true, Sort.by("producers", "year"));
+		Iterable<Movie> movies = movieRepostory.findAllByWinner(true, null);
+		ArrayList<Movie> producersList = new ArrayList<>();
+		for(Movie movie : movies) {
+			String[] producers = movie.getProducers().replace("and",  ",").split(",");
+			for(String p : producers) {
+				Movie m = new Movie();
+				m.setProducers(p.trim());
+				m.setStudios(movie.getStudios());
+				m.setTitle(movie.getTitle());
+				m.setWinner(movie.getWinner());
+				m.setYear(movie.getYear());
+				producersList.add(m);
+			}
+		}
+		
+		Collections.sort(producersList, Comparator.comparing(Movie::getProducers).thenComparing(Movie::getYear));
+		
 		LinkedList<Winner> minListTmp = new LinkedList<>();
 		LinkedList<Winner> maxListTmp = new LinkedList<>();
 		
 		int min = Short.MAX_VALUE;
 		int max = Short.MIN_VALUE;
 		Movie last = null;
-		for(Movie movie : movies) {
+		for(Movie movie : producersList) {
 			if (last != null) {
 				if (last.getProducers().equals(movie.getProducers())) {
 					int interval = movie.getYear() - last.getYear();

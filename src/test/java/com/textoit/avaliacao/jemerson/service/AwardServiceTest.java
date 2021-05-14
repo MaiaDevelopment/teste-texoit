@@ -31,7 +31,7 @@ public class AwardServiceTest {
 		Movie m = null;
 		
 		m = new Movie();
-		m.setProducers("Producer 1");
+		m.setProducers("Producer 1, Producer 2");
 		m.setYear((short)1900);
 		movies.add(m);
 		m = new Movie();
@@ -43,7 +43,7 @@ public class AwardServiceTest {
 		m.setYear((short)2008);
 		movies.add(m);
 		m = new Movie();
-		m.setProducers("Producer 1");
+		m.setProducers("Producer 1, Producer 2 and Producer 3");
 		m.setYear((short)2009);
 		movies.add(m);
 		
@@ -52,7 +52,7 @@ public class AwardServiceTest {
 		m.setYear((short)2000);
 		movies.add(m);
 		m = new Movie();
-		m.setProducers("Producer 2");
+		m.setProducers("Producer 2 and Producer 3");
 		m.setYear((short)2018);
 		movies.add(m);
 		m = new Movie();
@@ -64,15 +64,15 @@ public class AwardServiceTest {
 		m.setYear((short)2099);
 		movies.add(m);
 		
-		Mockito.when(movieRepository.findAllByWinner(true, Sort.by("producers", "year"))).thenReturn(movies);
+		Mockito.when(movieRepository.findAllByWinner(true, null)).thenReturn(movies);
 		
 		Award result = awardService.getAwardWinners();
+
 		assertThat(result.getMin().length).isEqualTo(2);
 		assertThat(result.getMin()[0].getInterval()).isEqualTo(1);
-		assertThat(result.getMin()[1].getInterval()).isEqualTo(1);
 		
 		assertThat(result.getMax().length).isEqualTo(1);
-		assertThat(result.getMax()[0].getInterval()).isEqualTo(99);
+		assertThat(result.getMax()[0].getInterval()).isEqualTo(100);
 	}
 
 }

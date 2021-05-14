@@ -51,4 +51,11 @@ public class Winner {
 		this.followingWin = followingWin;
 	}
 
+	@Override
+	public String toString() {
+		return "Winner [producer=" + producer + ", interval=" + interval + ", previousWin=" + previousWin
+				+ ", followingWin=" + followingWin + "]";
+	}
+
+	
 }
