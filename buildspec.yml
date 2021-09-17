@@ -8,7 +8,7 @@ phases:
     commands:
       - echo Preparing build...
       - aws --version
-      - $(aws ecr get-login --region sa-east-1 --no-include-email)
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 433790316718.dkr.ecr.us-east-1.amazonaws.com
       - REPOSITORY_URI=433790316718.dkr.ecr.us-east-1.amazonaws.com/jemerson
       - IMAGE_NAME=$REPOSITORY_URI/texoit
   build:
