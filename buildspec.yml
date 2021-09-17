@@ -6,14 +6,22 @@ phases:
       java: corretto11
   pre_build:
     commands:
-      - echo Nothing to do in the pre_build phase...
+      - echo Preparing build...
+      - aws --version
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 433790316718.dkr.ecr.us-east-1.amazonaws.com      
+      - REPOSITORY_URI=433790316718.dkr.ecr.us-east-1.amazonaws.com/jemerson
+      - IMAGE_NAME=$REPOSITORY_URI/texoit
   build:
     commands:
       - echo Build started on `date`
       - mvn install
+      - docker build -t $IMAGE_NAME .
+      - docker tag $IMAGE_NAME:latest $IMAGE_NAME
   post_build:
     commands:
       - echo Build completed on `date`
+      - echo Pushing the Docker images...
+      - docker push $REPOSITORY_URI:latest
 artifacts:
   files:
     - target/avaliacao-texoit-0.0.1-SNAPSHOT.jar
