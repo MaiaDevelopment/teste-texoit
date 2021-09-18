@@ -2,6 +2,8 @@
 
 [![CI - build / test / deploy heroku](https://github.com/jfnandopr/teste-texoit/actions/workflows/pipeline.yml/badge.svg?branch=main)](https://github.com/jfnandopr/teste-texoit/actions/workflows/pipeline.yml)
 
+[![CD - Deploy to Amazon ECS](https://github.com/jfnandopr/teste-texoit/actions/workflows/aws.yml/badge.svg)](https://github.com/jfnandopr/teste-texoit/actions/workflows/aws.yml)
+
 ## Build Project
 
 Executar instrução:
@@ -32,11 +34,13 @@ Atenção: O arquivo csv que é importado está na pasta `src/main/resources/inp
 
 ### Application API
 
-Acessar[http://localhost:8080/api/movies/awards](http://localhost:8080/api/movies/awards)
+Acessar[https://textoit-test.herokuapp.com/api/movies/awards](https://textoit-test.herokuapp.com/api/movies/awards)
+
+Localmente pode ser acesso pelo endereço `localhost:8080`
 
 ### Database access
 
-[http://localhost:8080/h2-console](http://localhost:8080/h2-console)
+[https://textoit-test.herokuapp.com/h2-console](https://textoit-test.herokuapp.com/h2-console)
 
 `JDBC URL`: jdbc:h2:mem:texoit
 
