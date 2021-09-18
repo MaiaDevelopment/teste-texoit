@@ -2,6 +2,8 @@
 
 [![CI - build / test / deploy heroku](https://github.com/jfnandopr/teste-texoit/actions/workflows/pipeline.yml/badge.svg?branch=main)](https://github.com/jfnandopr/teste-texoit/actions/workflows/pipeline.yml)
 
+[![CD - Deploy to Amazon ECS](https://github.com/jfnandopr/teste-texoit/actions/workflows/aws.yml/badge.svg)](https://github.com/jfnandopr/teste-texoit/actions/workflows/aws.yml)
+
 ## Build Project
 
 Executar instrução:
