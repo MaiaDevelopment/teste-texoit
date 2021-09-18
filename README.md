@@ -1,5 +1,7 @@
 # Getting Started
 
+![Pipeline Status](https://github.com/jfnandopr/teste-texoit.git/actions/workflows/pipeline.yml/badge.svg)
+
 ## Build Project
 
 Executar instrução:
