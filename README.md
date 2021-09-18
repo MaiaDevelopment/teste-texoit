@@ -34,11 +34,13 @@ Atenção: O arquivo csv que é importado está na pasta `src/main/resources/inp
 
 ### Application API
 
-Acessar[http://localhost:8080/api/movies/awards](http://localhost:8080/api/movies/awards)
+Acessar[https://textoit-test.herokuapp.com/api/movies/awards](https://textoit-test.herokuapp.com/api/movies/awards)
+
+Localmente pode ser acesso pelo endereço `localhost:8080`
 
 ### Database access
 
-[http://localhost:8080/h2-console](http://localhost:8080/h2-console)
+[https://textoit-test.herokuapp.com/h2-console](https://textoit-test.herokuapp.com/h2-console)
 
 `JDBC URL`: jdbc:h2:mem:texoit
 
