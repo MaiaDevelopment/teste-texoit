@@ -1,5 +1,6 @@
 name: CD - Deploy to Amazon ECS
 
+
 on:
   release:
     types: [created]
