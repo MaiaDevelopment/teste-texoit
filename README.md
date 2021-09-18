@@ -1,6 +1,6 @@
 # Getting Started
 
-![Pipeline Status](https://github.com/jfnandopr/teste-texoit.git/actions/workflows/pipeline.yml/badge.svg)
+[![CI - build / test / deploy heroku](https://github.com/jfnandopr/teste-texoit/actions/workflows/pipeline.yml/badge.svg?branch=main)](https://github.com/jfnandopr/teste-texoit/actions/workflows/pipeline.yml)
 
 ## Build Project
 
